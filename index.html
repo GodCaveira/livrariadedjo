@@ -51,11 +51,11 @@
         <h1>Livraria</h1>
     </header>
     <body>
-        <h2>Bem-vindo à Livraria Online</h2>
+       <center> <h2>Bem-vindo à Livraria Online</h2>
         <p>Insira o valor total da sua compra:</p>
         <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
         <button onclick="calcularDesconto()">Calcular Desconto</button>
-        <p>Desconto aplicado: <span id="desconto"></span></p>
+        <p>Desconto aplicado: <span id="desconto"></span></p></center>
     
         <script>
             function calcularDesconto() {
@@ -106,6 +106,61 @@
 
     <center> <br> quantidade (entre 1 e 5): <input type="number" name="quantidade" min="1" max="5"></center>
     <center>   </form> </body> 
+
+        <h1>Cadastro Usuario</h1>
+        <form id="cadastroform">
+        <label for="nomeESobrenome">Nome e Sobrenome</label>
+                <input type="text" id="nomeESobrenome" name="nome"><br><br>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email"><br><br>
+    
+                <label for="telefone">Telefone</label>
+                <input type="tel" id="telefone" name="telefone"><br><br>
+    
+                <button type="button" onclick="cadastrarusuario()">Cadastrar</button>
+    
+            </form>
+    
+            <div id="mensagem"></div>
+              <script>
+                function cadastrarusuario(){
+                    var nome = document.getElementsById("nome").value;
+                    var email = document.getElementsById("email").value;
+                    var telefone = document.getElementsById("telefone").value;
+    
+                    if (nome === ""|| email === "" || senha === ""){
+                        document.getElementById("mensagem").innerHTML = "Por favor, preencha todos os campos" return;
+                    }
+                    
+                    var usuario = {
+                        nome: nome,
+                        email: email,
+                        telefone: telefone
+                    };
+    
+                    console.log("Usuario cadastrado: ", usuario);
+    
+                    document.getElementById("cadastroform").reset();
+                    document.getElementById("mensagem").innerHTML = "Cadastro realizado com sucesso"
+                };
+    
+    
+            
+              </script>
+
+<form>
+    <p> Qual o estilo de livro preferido?</p>
+    <input type="radio" name="estilo" value="18_22">ROMANCE <br>
+    <input type="radio" name="estilo" value="23_30">DRAMA <br>
+    <input type="radio" name="estilo" value="mais31">BIOGRAFIA <br>
+</form>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li> 
+    </ul>
+</nav>
     
 </body>
 </html>
